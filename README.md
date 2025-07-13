@@ -5,10 +5,7 @@ This is my personal portfolio site built using HTML, CSS, and JavaScript. It inc
 ## 🔧 Tech Stack
 - HTML5
 - CSS3
-- JavaScript (optional)
-
-## 📸 Preview
-Add screenshots here
+- JavaScript
 
 ## 🚀 Features
 - Responsive layout
