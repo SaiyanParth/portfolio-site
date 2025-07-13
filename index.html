@@ -1,70 +1,195 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Parth Shah | Web Developer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --accent: #18BC9C;
+      --transition: 0.4s ease;
+
+      --text-light: #333;
+      --bg-light: #F9F9F9;
+      --header-bg-light: #2C3E50;
+      --heading-light: #2C3E50;
+
+      --text-dark: #e0e0e0;
+      --bg-dark: #121212;
+      --header-bg-dark: #1A1A1A;
+      --heading-dark: #ffffff;
+    }
+
+    [data-theme="light"] {
+      --text: var(--text-light);
+      --bg: var(--bg-light);
+      --header-bg: var(--header-bg-light);
+      --heading: var(--heading-light);
+    }
+
+    [data-theme="dark"] {
+      --text: var(--text-dark);
+      --bg: var(--bg-dark);
+      --header-bg: var(--header-bg-dark);
+      --heading: var(--heading-dark);
+    }
+
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      scroll-behavior: smooth;
     }
 
     body {
-      font-family: 'Segoe UI', sans-serif;
+      font-family: 'Montserrat', sans-serif;
+      background: var(--bg);
+      color: var(--text);
       line-height: 1.6;
-      background: #f4f4f4;
-      color: #333;
-      padding: 20px;
+      transition: background var(--transition), color var(--transition);
     }
 
     header {
-      text-align: center;
-      padding: 40px 0;
-      background-color: #20232a;
+      background: var(--header-bg);
       color: white;
+      text-align: center;
+      padding: 80px 20px 60px;
+      position: relative;
+      transition: background var(--transition), color var(--transition);
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    header p#typing {
+      font-size: 1.2rem;
+      margin-top: 10px;
+      font-weight: 500;
+      min-height: 24px;
+    }
+
+    .toggle-btn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 1.3rem;
+      background: none;
+      border: 2px solid white;
+      color: white;
+      border-radius: 30px;
+      padding: 6px 12px;
+      cursor: pointer;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .toggle-btn:hover {
+      background: white;
+      color: var(--header-bg);
     }
 
     section {
-      margin: 30px 0;
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 0 20px;
     }
 
     h2 {
-      color: #20232a;
-      margin-bottom: 10px;
+      color: var(--heading);
+      margin-bottom: 15px;
+      border-bottom: 2px solid var(--accent);
+      display: inline-block;
+      padding-bottom: 5px;
+      transition: color var(--transition);
     }
 
-    .skills ul, .projects ul {
-      list-style: disc;
-      margin-left: 20px;
+    ul {
+      list-style: none;
+      margin-top: 10px;
     }
 
-    .contact form {
+    li {
+      margin-bottom: 8px;
+    }
+
+    .skills li::before, .projects li::before {
+      content: "✓";
+      color: var(--accent);
+      margin-right: 8px;
+    }
+
+    form {
       display: flex;
       flex-direction: column;
+      gap: 10px;
+      margin-top: 10px;
     }
 
-    .contact input, .contact textarea {
-      margin-bottom: 10px;
-      padding: 10px;
-      border: 1px solid #ddd;
-      border-radius: 4px;
+    input, textarea {
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+      transition: border var(--transition);
+      background: #fff;
+      color: #000;
     }
 
-    .contact button {
-      background: #20232a;
+    [data-theme="dark"] input,
+    [data-theme="dark"] textarea {
+      background: #1e1e1e;
+      color: white;
+      border-color: #444;
+    }
+
+    input:focus, textarea:focus {
+      border-color: var(--accent);
+      outline: none;
+    }
+
+    button {
+      background: var(--accent);
       color: white;
       border: none;
-      padding: 10px;
-      border-radius: 4px;
+      padding: 12px;
+      font-size: 1rem;
+      border-radius: 6px;
       cursor: pointer;
+      transition: background var(--transition);
+    }
+
+    button:hover {
+      background: #149e81;
     }
 
     footer {
       text-align: center;
-      margin-top: 40px;
-      color: #777;
+      padding: 30px 10px;
+      background: #eee;
+      font-size: 0.9rem;
+      color: #555;
+      margin-top: 60px;
+    }
+
+    [data-theme="dark"] footer {
+      background: #1a1a1a;
+      color: #aaa;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      header p#typing {
+        font-size: 1rem;
+      }
+
+      section {
+        margin: 30px 10px;
+      }
     }
   </style>
 </head>
@@ -72,53 +197,105 @@
 
   <header>
     <h1>Parth Shah</h1>
-    <p>Web Developer | HTML • CSS • JS • Python</p>
+    <p id="typing">Web Developer</p>
+    <button class="toggle-btn" onclick="toggleTheme()">🌙</button>
   </header>
 
   <section class="about">
     <h2>About Me</h2>
-    <p>I'm an 18-year-old web developer from Vadodara, passionate about creating clean, responsive websites. Currently pursuing a Diploma in Computer Engineering.</p>
+    <p>I’m an 18-year-old web developer from Vadodara, currently pursuing a Diploma in Computer Engineering at Parul University with a CGPA of 8.63. I aim to become a skilled full stack developer and am passionate about building real-world, responsive web applications. I value time management, communication, and problem-solving.</p>
   </section>
 
   <section class="skills">
-    <h2>Skills</h2>
+    <h2>Technical Skills</h2>
     <ul>
-      <li>HTML5</li>
-      <li>CSS3</li>
-      <li>JavaScript</li>
-      <li>Python</li>
-      <li>Git & GitHub</li>
+      <li>Programming: Python, C, C++, JavaScript, PHP</li>
+      <li>Web Tech: HTML5, CSS3, Bootstrap, Git & GitHub</li>
+      <li>Tools: VS Code, Figma, Canva, Microsoft Office</li>
+      <li>Frontend & Backend Development</li>
     </ul>
   </section>
 
   <section class="projects">
     <h2>Projects</h2>
     <ul>
-      <li><strong>Startup Landing Page:</strong> A 1-page responsive site</li>
-      <li><strong>To-Do List App:</strong> JS-based task tracker</li>
-      <li><strong>Contact Form UI:</strong> Frontend form with validation</li>
+      <li>
+        <strong>1. Academate - A Dynamic eLearning Portal:</strong>
+        A PHP-MySQL powered education portal where students can access YouTube videos, PDF files, and summaries based on their selected stream, semester, subject, and topic. Includes a role-based admin panel for managing academic content. <br />
+        <em>Tech Used:</em> PHP, MySQL, HTML/CSS, Sessions
+      </li>
+      <li>
+        <strong>2. Personal Portfolio Website:</strong>
+        Fully responsive site with dark mode, typing animation, and contact form. Built using HTML, CSS, JavaScript and hosted on GitHub Pages.
+      </li>
+      <li>
+        <strong>3. To-Do List Web App:</strong>
+        Task manager using HTML/CSS/JavaScript and DOM manipulation. Allows users to add, delete, and complete tasks.
+      </li>
+      <li>
+        <strong>4. Startup Landing Page:</strong>
+        A modern one-page layout built using HTML and CSS Grid/Flexbox. Includes product features and a call-to-action button.
+      </li>
     </ul>
   </section>
 
   <section class="contact">
-    <h2>Contact</h2>
+    <h2>Contact Me</h2>
     <form id="contactForm">
       <input type="text" placeholder="Your Name" required />
       <input type="email" placeholder="Your Email" required />
-      <textarea placeholder="Your Message" required></textarea>
-      <button type="submit">Send</button>
+      <textarea placeholder="Your Message" required rows="4"></textarea>
+      <button type="submit">Send Message</button>
     </form>
   </section>
 
   <footer>
-    <p>Made with ❤️ by Parth Shah</p>
+    <p>Made with ❤️ by Parth Shah • © 2025</p>
   </footer>
 
   <script>
+    // Contact Form
     document.getElementById("contactForm").addEventListener("submit", function(e) {
       e.preventDefault();
       alert("Thanks for reaching out! I'll get back to you soon.");
     });
+
+    // Theme Toggle
+    function toggleTheme() {
+      const html = document.documentElement;
+      const current = html.getAttribute("data-theme");
+      const next = current === "light" ? "dark" : "light";
+      html.setAttribute("data-theme", next);
+      document.querySelector(".toggle-btn").textContent = next === "dark" ? "☀️" : "🌙";
+    }
+
+    // Typing Animation
+    const roles = ["Web Developer", "HTML", "CSS", "JavaScript", "Python", "PHP", "C", "C++", "Git & GitHub"];
+    let currentRole = 0;
+    let charIndex = 0;
+    let typingElement = document.getElementById("typing");
+    let isDeleting = false;
+
+    function typeEffect() {
+      let currentText = roles[currentRole];
+      let displayText = isDeleting
+        ? currentText.substring(0, charIndex--)
+        : currentText.substring(0, charIndex++);
+
+      typingElement.textContent = displayText;
+
+      if (!isDeleting && charIndex === currentText.length) {
+        setTimeout(() => (isDeleting = true), 1000);
+      } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        currentRole = (currentRole + 1) % roles.length;
+      }
+
+      setTimeout(typeEffect, isDeleting ? 50 : 100);
+    }
+
+    typeEffect();
   </script>
+
 </body>
 </html>
