@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Parth Shah | Web Developer</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      background: #f4f4f4;
+      color: #333;
+      padding: 20px;
+    }
+
+    header {
+      text-align: center;
+      padding: 40px 0;
+      background-color: #20232a;
+      color: white;
+    }
+
+    section {
+      margin: 30px 0;
+    }
+
+    h2 {
+      color: #20232a;
+      margin-bottom: 10px;
+    }
+
+    .skills ul, .projects ul {
+      list-style: disc;
+      margin-left: 20px;
+    }
+
+    .contact form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .contact input, .contact textarea {
+      margin-bottom: 10px;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+
+    .contact button {
+      background: #20232a;
+      color: white;
+      border: none;
+      padding: 10px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Parth Shah</h1>
+    <p>Web Developer | HTML • CSS • JS • Python</p>
+  </header>
+
+  <section class="about">
+    <h2>About Me</h2>
+    <p>I'm an 18-year-old web developer from Vadodara, passionate about creating clean, responsive websites. Currently pursuing a Diploma in Computer Engineering.</p>
+  </section>
+
+  <section class="skills">
+    <h2>Skills</h2>
+    <ul>
+      <li>HTML5</li>
+      <li>CSS3</li>
+      <li>JavaScript</li>
+      <li>Python</li>
+      <li>Git & GitHub</li>
+    </ul>
+  </section>
+
+  <section class="projects">
+    <h2>Projects</h2>
+    <ul>
+      <li><strong>Startup Landing Page:</strong> A 1-page responsive site</li>
+      <li><strong>To-Do List App:</strong> JS-based task tracker</li>
+      <li><strong>Contact Form UI:</strong> Frontend form with validation</li>
+    </ul>
+  </section>
+
+  <section class="contact">
+    <h2>Contact</h2>
+    <form id="contactForm">
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea placeholder="Your Message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>Made with ❤️ by Parth Shah</p>
+  </footer>
+
+  <script>
+    document.getElementById("contactForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      alert("Thanks for reaching out! I'll get back to you soon.");
+    });
+  </script>
+</body>
+</html>
