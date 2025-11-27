@@ -6,6 +6,9 @@ This is my personal portfolio site built using HTML, CSS, and JavaScript. It inc
 - HTML5
 - CSS3
 - JavaScript
+- PHP
+- Python
+- .NET with C#
 
 ## 🚀 Features
 - Responsive layout
