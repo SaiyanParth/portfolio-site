@@ -204,6 +204,9 @@
   <section class="about">
     <h2>About Me</h2>
     <p>I’m an 18-year-old web developer from Vadodara, currently pursuing a Diploma in Computer Engineering at Parul University with a CGPA of 8.63. I aim to become a skilled full stack developer and am passionate about building real-world, responsive web applications. I value time management, communication, and problem-solving.</p>
+    <strong>Github:</strong> <a href="https://github.com/SaiyanParth" target="_blank">github.com/SaiyanParth</a>
+    <br>
+    <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/parth-shah-40029b300/" target="_blank">linkedin.com/in/parth-shah-40029b300/</a>
   </section>
 
   <section class="skills">
@@ -211,7 +214,6 @@
     <ul>
       <li>Programming: Python, C, C++, JavaScript, PHP, Java</li>
       <li>Web Tech: HTML5, CSS3, Git & GitHub</li>
-      <li>Mobile Application: Kotlin</li>
       <li>Tools: VS Code, Figma, Canva, Microsoft Office</li>
       <li>Frontend & Backend Development</li>
     </ul>
@@ -229,24 +231,31 @@
       <li>
         <strong>2. Personal Portfolio Website:</strong>
         Fully responsive site with dark mode, typing animation, and contact form. Built using HTML, CSS, JavaScript and hosted on GitHub Pages.<br>Link:- <a href='https://parthjshah.netlify.app/'> Portfolio </a>
+        <strong>Tech Stack:</strong> HTML, CSS, JavaScript
+        <br>Link: <a href='https://parthjshah.netlify.app/'> Portfolio </a>
       </li>
       <li>
         <strong>3. To-Do List Web App:</strong>
         Task manager using HTML/CSS/JavaScript and DOM manipulation. Allows users to add, delete, and complete tasks.<br>Link:- <a href='https://saiyanparth.github.io/to-do-site/'> To do list </a>
+        <strong>Tech Stack:</strong> HTML, CSS, JavaScript
+        <br>Link: <a href='https://saiyanparth.github.io/to-do-site/'> To do list </a>
       </li>
       <li>
         <strong>4. Startup Landing Page:</strong>
         A modern one-page layout built using HTML and CSS Grid/Flexbox. Includes product features and a call-to-action button.<br>Link:- <a href='https://saiyanparth.github.io/startup-landing-page/'> Startup Landing Page </a>
+        <strong>Tech Stack:</strong> HTML, CSS
+        <br>Link: <a href='https://saiyanparth.github.io/startup-landing-page/'> Startup Landing Page </a>
       </li>
       <li>
         <strong>5. Password Generater</strong>
         A modern one page Randomised Password Generater with the feature to adjust the length of the password and many other things regarding generation of password. <br> <em>Tech Stack:</em> React.js, CSS
-        <br>Link:- <a href="https://parth-passwordgenerator.netlify.app/">Password Generater </a>
+        <br>Link to Github Repo:- <a href="https://parth-passwordgenerator.netlify.app/">Password Generater </a>
       </li>
       <li>
         <strong>6. Quiz App</strong>
-        A modern Mobile Quiz App for PHP consisting of over 40+ questions built using Kotlin.
-        <br>Link:- <a href="https://github.com/SaiyanParth/QuizApp">Quiz App</a>
+        A simple mobile quiz application built with Kotlin. <br> 
+        <strong>Tech Stack:</strong> Kotlin
+        <br>Link to Github Repo:- <a href="https://github.com/SaiyanParth/QuizApp">Quiz App</a>
       </li>
     </ul>
   </section>
@@ -266,6 +275,12 @@
   </footer>
 
   <script>
+    // Contact Form
+    document.getElementById("contactForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      alert("Thanks for reaching out! I'll get back to you soon.");
+    });
+
     // Theme Toggle
     function toggleTheme() {
       const html = document.documentElement;
